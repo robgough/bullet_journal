@@ -14,6 +14,7 @@ How you can call the `bulletjournal`
   The problem with this is trying to be too clever, we're going
   to have to carefully limit what the possible options for the
   date modifier are allowed to be. For now, they are;
+
     - `today` (default)
     - `tomorrow`
     - `yesterday`
@@ -24,6 +25,7 @@ How you can call the `bulletjournal`
     - `someday` a special undated case
 
   Examples;
+
     - `bulletjournal` => "JOURNAL_2021-01-01_Friday.md"
     - `bulletjournal today` => "JOURNAL_2021-01-01_Friday.md"
     - `bulletjournal yesterday` => "JOURNAL_2020_12_31_Thursday.md"
@@ -38,7 +40,7 @@ This can be used on the terminal in conjunction with your favourite editor;
 nvim $(ruby bullet_journal.rb today)
 ```
 
-This might have limited utility for the moment, but can be used inside zsh functions (this matches my current functionality.
+This might have limited utility for the moment, but can be used inside zsh functions (this matches my current functionality) and is intended to be replaced in the future.
 
 ## To Do
 
