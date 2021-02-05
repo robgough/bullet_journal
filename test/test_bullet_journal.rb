@@ -16,6 +16,13 @@ class TestBulletJournal < Minitest::Test
     )
   end
 
+  def test_today_specified
+    assert_equal(
+      "JOURNAL_2021-01-01_Friday.md",
+      BulletJournal.new(["today"]).full_name
+    )
+  end
+
   def test_just_tomorrow_returns
     assert_equal(
       "JOURNAL_2021-01-02_Saturday.md",

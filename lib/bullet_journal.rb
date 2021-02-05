@@ -33,6 +33,8 @@ class BulletJournal
         when "someday"
           @someday = true
           parse_name(args[1..])
+        when "today"
+          parse_name(args[1..])
         when "last"
 
         when "next"
