@@ -45,15 +45,33 @@ nvim $(ruby bullet_journal.rb today)
 
 This might have limited utility for the moment, but can be used inside zsh functions (this matches my current functionality) and is intended to be replaced in the future.
 
+## Testing
+
+All tests can be ran with:
+
+```bash
+rake test
+```
+
 ## To Do
 
-- [ ] Turn into a ruby gem with an executable
+- [ ] basic functionality
+  - [x] someday
+  - [ ] today
+  - [ ] yesterday
+  - [ ] tomorrow
+  - [ ] specify non-default journal
+- [x] launch directly into an editor
+- [x] Turn into a ruby gem with an executable
+- [ ] release the gem!
 - [ ] create a config file `~/.bulletjournal.config` for storing
   - [ ] central notes location
   - [ ] journal-specific notes location
-  - [ ] auto-opening your editor of choice
+  - [ ] default journal name (original is "JOURNAL")
+  - [ ] whitelist only acceptable journal names
+  - [ ] editor of choice
 - [ ] accept a more rigid argument input in addition to lazy freetext
-- [ ] outstanding items
+- [ ] view outstanding/incomplete items
   - allow parsing through a journals files and spotting/triaging any outstanding items, including moving them forward to specific days
 - [ ] creating a default template for a day
 - [ ] quick browse (show summary of recent days)

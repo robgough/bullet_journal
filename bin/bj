@@ -1,4 +1,21 @@
 #!/usr/bin/env ruby
 
 require 'bullet_journal'
-puts BulletJournal.new(ARGV).full_name
+
+file_name = BulletJournal.new(ARGV).full_name
+
+# So, you're probably wondering... 
+# `system` vs `exec`
+# Well, exec effectively ends this process and
+# launches your new one. System returns back to
+# ruby once it's finished. This may have a memory/cpu
+# penalty but I'm not sure. I can worry about that later.
+# (there may be an upcoming reason why I would like to
+# return to ruby once vim has closed, but I'm forgetting
+# it right now)
+
+#exec "nvim #{file_name}"
+
+system "nvim #{file_name}"
+puts "Bullet Journal thanks you"
+
