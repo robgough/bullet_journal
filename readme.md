@@ -44,7 +44,7 @@ This might have limited utility for the moment, but can be used inside zsh funct
 
 ## To Do
 
-- [ ] Turn into a ruby gem that can be called directly
+- [ ] Turn into a ruby gem with an executable
 - [ ] create a config file `~/.bulletjournal.config` for storing
   - [ ] central notes location
   - [ ] journal-specific notes location
