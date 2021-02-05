@@ -1,5 +1,5 @@
 require 'minitest/autorun'
-require './journal'
+require './bullet_journal'
 
 # How you can call the `Journal`
 #   journal [date-modifier (optional)] [journal name (optional)]
@@ -17,58 +17,58 @@ require './journal'
 #     - `someday` a special undated case
 #
 #   Examples;
-#     - `journal` => "JOURNAL_2021-01-01_Friday.md"
-#     - `journal today` => "JOURNAL_2021-01-01_Friday.md"
-#     - `journal yesterday` => "JOURNAL_2020_12_31_Thursday.md"
-#     - `journal yesterday banana` => "BANANA_2020_12_31_Thursday.md"
-#     - `journal next tuesday` => "JOURNAL_2021-01-05_Tuesday.md"
-#     - `journal next tuesday banana` => "BANANA_2021-01-05_Tuesday.md"
-#     - `journal someday` => "JOURNAL_Someday.md"
+#     - `bulletjournal` => "JOURNAL_2021-01-01_Friday.md"
+#     - `bulletjournal today` => "JOURNAL_2021-01-01_Friday.md"
+#     - `bulletjournal yesterday` => "JOURNAL_2020_12_31_Thursday.md"
+#     - `bulletjournal yesterday banana` => "BANANA_2020_12_31_Thursday.md"
+#     - `bulletjournal next tuesday` => "JOURNAL_2021-01-05_Tuesday.md"
+#     - `bulletjournal next tuesday banana` => "BANANA_2021-01-05_Tuesday.md"
+#     - `bulletjournal someday` => "JOURNAL_Someday.md"
 
-class TestJournal < Minitest::Test
+class TestBulletJournal < Minitest::Test
   def setup
-    @journal_date = JournalDate.new(Time.new(2021-01-01))
+    @journal_date = BulletJournalDate.new(Time.new(2021-01-01))
   end
 
   def test_no_params_returns_journal_for_today
     assert_equal(
       "JOURNAL_2021-01-01_Friday.md",
-      Journal.new.full_name
+      BulletJournal.new.full_name
     )
   end
 
   def test_just_tomorrow_returns
     assert_equal(
       "JOURNAL_2021-01-02_Saturday.md",
-      Journal.new(["tomorrow"]).full_name
+      BulletJournal.new(["tomorrow"]).full_name
     )
   end
 
   def test_just_someday
     assert_equal(
       "JOURNAL_Someday.md",
-      Journal.new(["someday"]).full_name
+      BulletJournal.new(["someday"]).full_name
     )
   end
 
   def test_someday_with_custom_name
     assert_equal(
       "CUSTOM_Someday.md",
-      Journal.new(%w[someday custom]).full_name
+      BulletJournal.new(%w[someday custom]).full_name
     )
   end
 
   def test_reads_out_diary_name_after_multi_word_date
     assert_equal(
       "BANANA",
-      Journal.new(["banana"]).name
+      BulletJournal.new(["banana"]).name
     )
   end
 
   def test_custom_multiword_name_joins_with_hyphen
     assert_equal(
       "BANANA-HAMMOCK",
-      Journal.new(%w[banana hammock]).name
+      BulletJournal.new(%w[banana hammock]).name
     )
   end
 end

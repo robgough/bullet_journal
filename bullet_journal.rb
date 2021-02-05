@@ -1,7 +1,7 @@
 #!/usr/bin/env ruby
-class Journal
+class BulletJournal
   def initialize(args = [],
-                 journal_date = JournalDate.new)
+                 journal_date = BulletJournalDate.new)
 
     parse_args(args)
     @journal_date = journal_date
@@ -51,7 +51,7 @@ class Journal
     end
 end
 
-class JournalDate
+class BulletJournalDate
   def initialize(current_time = Time.now)
     @time = current_time
   end
@@ -65,4 +65,4 @@ class JournalDate
   end
 end
 
-puts Journal.new(ARGV).full_name
+puts BulletJournal.new(ARGV).full_name
