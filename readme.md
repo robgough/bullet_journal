@@ -6,10 +6,13 @@ The initial version is simply concerned with reducing friction when creating mar
 
 ## How to use
 
-How you can call the `bulletjournal`
+After a `gem install bulletjournal` you should be able to call the bullet journal with the following (this is subject to change)
+
+```bash
   bulletjournal [date-modifier (optional)]
     [additional-date-modifier (optional)]
     [journal name (optional)]
+```
 
   The problem with this is trying to be too clever, we're going
   to have to carefully limit what the possible options for the
