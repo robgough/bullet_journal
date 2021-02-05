@@ -1,4 +1,4 @@
-# BulletJournal
+# Bullet Journal
 
 A simple ruby gem to aid in keeping one or more journals made of just markdown files.
 
@@ -6,7 +6,7 @@ The initial version is simply concerned with reducing friction when creating mar
 
 ## How to use
 
-After a `gem install bulletjournal` you should be able to call the bullet journal with the following (this is subject to change)
+After a `gem install bullet_journal` you should be able to call the bullet journal with the following (this is subject to change)
 
 ```bash
   bulletjournal [date-modifier (optional)]

@@ -1,14 +1,15 @@
-#!/usr/bin/env ruby
 class BulletJournal
   def initialize(args = [],
-                 journal_date = BulletJournalDate.new)
+                 journal_date = BulletJournal::Day.new)
 
-    parse_args(args)
     @journal_date = journal_date
+    @someday = false
+    parse_args(args)
   end
 
   def full_name
     return "#{name}_Someday.md" if @someday
+
     "#{name}_#{date}_#{weekday}.md"
   end
 
@@ -51,18 +52,4 @@ class BulletJournal
     end
 end
 
-class BulletJournalDate
-  def initialize(current_time = Time.now)
-    @time = current_time
-  end
-
-  def date
-    '2021-01-01'
-  end
-
-  def weekday
-    "Friday"
-  end
-end
-
-puts BulletJournal.new(ARGV).full_name
+require 'bullet_journal/day.rb'

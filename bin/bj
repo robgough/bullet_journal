@@ -1,0 +1,4 @@
+#!/usr/bin/env ruby
+
+require 'bullet_journal'
+puts BulletJournal.new(ARGV).full_name

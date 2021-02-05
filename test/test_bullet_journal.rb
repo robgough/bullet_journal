@@ -1,9 +1,12 @@
 require 'minitest/autorun'
-require './bullet_journal'
+require 'minitest/reporters'
+require 'bullet_journal'
+
+Minitest::Reporters.use!
 
 class TestBulletJournal < Minitest::Test
   def setup
-    @journal_date = BulletJournalDate.new(Time.new(2021-01-01))
+    @journal_date = BulletJournal::Day.new(Time.new(2021-01-01))
   end
 
   def test_no_params_returns_journal_for_today
