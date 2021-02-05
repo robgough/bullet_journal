@@ -1,30 +1,6 @@
 require 'minitest/autorun'
 require './bullet_journal'
 
-# How you can call the `Journal`
-#   journal [date-modifier (optional)] [journal name (optional)]
-#
-#   The problem with this is trying to be too clever, we're going
-#   to have to carefully limit what the possible options for the
-#   date modifier are allowed to be. For now, they are;
-#     - `today` (default)
-#     - `tomorrow`
-#     - `yesterday`
-#     - `last <weekday>` (where <weekday> is Monday, Tuesday, Wednesday...)
-#     - `last week` the monday of the previous week
-#     - `next <weekday>`
-#     - `next week` the following Monday
-#     - `someday` a special undated case
-#
-#   Examples;
-#     - `bulletjournal` => "JOURNAL_2021-01-01_Friday.md"
-#     - `bulletjournal today` => "JOURNAL_2021-01-01_Friday.md"
-#     - `bulletjournal yesterday` => "JOURNAL_2020_12_31_Thursday.md"
-#     - `bulletjournal yesterday banana` => "BANANA_2020_12_31_Thursday.md"
-#     - `bulletjournal next tuesday` => "JOURNAL_2021-01-05_Tuesday.md"
-#     - `bulletjournal next tuesday banana` => "BANANA_2021-01-05_Tuesday.md"
-#     - `bulletjournal someday` => "JOURNAL_Someday.md"
-
 class TestBulletJournal < Minitest::Test
   def setup
     @journal_date = BulletJournalDate.new(Time.new(2021-01-01))
