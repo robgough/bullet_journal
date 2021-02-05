@@ -12,42 +12,42 @@ class TestBulletJournal < Minitest::Test
   def test_no_params_returns_journal_for_today
     assert_equal(
       "JOURNAL_2021-01-01_Friday.md",
-      BulletJournal.new.full_name
+      BulletJournal.new.full_path
     )
   end
 
   def test_today_specified
     assert_equal(
       "JOURNAL_2021-01-01_Friday.md",
-      BulletJournal.new(["today"]).full_name
+      BulletJournal.new(["today"]).full_path
     )
   end
 
   def test_today_specified_with_journal
     assert_equal(
       "BANANA_2021-01-01_Friday.md",
-      BulletJournal.new(%w[ today banana]).full_name
+      BulletJournal.new(%w[ today banana]).full_path
     )
   end
 
   def test_just_tomorrow_returns
     assert_equal(
       "JOURNAL_2021-01-02_Saturday.md",
-      BulletJournal.new(["tomorrow"]).full_name
+      BulletJournal.new(["tomorrow"]).full_path
     )
   end
 
   def test_just_someday
     assert_equal(
       "JOURNAL_Someday.md",
-      BulletJournal.new(["someday"]).full_name
+      BulletJournal.new(["someday"]).full_path
     )
   end
 
   def test_someday_with_custom_name
     assert_equal(
       "CUSTOM_Someday.md",
-      BulletJournal.new(%w[someday custom]).full_name
+      BulletJournal.new(%w[someday custom]).full_path
     )
   end
 

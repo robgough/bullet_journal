@@ -57,7 +57,7 @@ rake test
 
 - [ ] basic functionality
   - [x] someday
-  - [ ] today
+  - [x] today
   - [ ] yesterday
   - [ ] tomorrow
   - [ ] specify non-default journal

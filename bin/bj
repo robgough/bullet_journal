@@ -2,9 +2,9 @@
 
 require 'bullet_journal'
 
-file_name = BulletJournal.new(ARGV).full_name
+journal = BulletJournal.new(ARGV)
 
-# So, you're probably wondering... 
+# So, you're probably wondering...
 # `system` vs `exec`
 # Well, exec effectively ends this process and
 # launches your new one. System returns back to
@@ -16,6 +16,7 @@ file_name = BulletJournal.new(ARGV).full_name
 
 #exec "nvim #{file_name}"
 
-system "nvim #{file_name}"
-puts "Bullet Journal thanks you"
+puts "Bullet Journal File:"
+puts "#{journal.full_path}"
+system "nvim #{journal.full_path}"
 

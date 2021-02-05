@@ -7,7 +7,7 @@ class BulletJournal
     parse_args(args)
   end
 
-  def full_name
+  def full_path
     return "#{name}_Someday.md" if @someday
 
     "#{name}_#{date}_#{weekday}.md"
