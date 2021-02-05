@@ -10,7 +10,7 @@ class BulletJournal
   def full_path
     return "#{name}_Someday.md" if @someday
 
-    "#{name}_#{date}_#{weekday}.md"
+    "#{name}_#{date}.md"
   end
 
   def name
@@ -19,10 +19,6 @@ class BulletJournal
 
   def date
     @journal_date.date
-  end
-
-  def weekday
-    @journal_date.weekday
   end
 
   private

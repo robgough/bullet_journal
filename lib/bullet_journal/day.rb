@@ -1,13 +1,9 @@
 class BulletJournal::Day
-  def initialize(current_time = Time.now)
-    @time = current_time
+  def initialize(time = Time.now)
+    @time = time
   end
 
   def date
-    '2021-01-01'
-  end
-
-  def weekday
-    "Friday"
+    @time.strftime("%Y-%m-%d_%A")
   end
 end
