@@ -1,7 +1,7 @@
 class BulletJournal
-  def initialize(args = [],
-                 day = BulletJournal::Day.new,
-                 config = BulletJournal::Config.new)
+  def initialize(args: [],
+                 day: BulletJournal::Day.new,
+                 config: BulletJournal::Config.new)
 
     @day = day
     @someday = false

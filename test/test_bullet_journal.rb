@@ -10,11 +10,15 @@ class TestBulletJournal < Minitest::Test
 
   def query_check(expected, query)
     journal_date = BulletJournal::Day.new(Time.new(2021,01,01))
-    config = BulletJournal::Config.new("./test/bullet_journal/config.test.yml")
+    config = BulletJournal::Config.new(
+      file: "./test/bullet_journal/config.test.yml",
+      logger: BulletJournal::Logger.new(enabled: false))
+
     assert_equal(
       expected,
-      BulletJournal.new(query.split, journal_date, config).full_path
-    )
+      BulletJournal.new(args: query.split,
+                        day: journal_date,
+                        config: config).full_path)
   end
 
   def test_today

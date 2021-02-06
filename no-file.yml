@@ -1,0 +1,5 @@
+
+default:
+  journal_name: "JOURNAL"
+  journal_location: "."
+  editor: "vim"

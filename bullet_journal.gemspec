@@ -8,7 +8,8 @@ Gem::Specification.new do |s|
   s.files       = [
     "lib/bullet_journal.rb",
     "lib/bullet_journal/day.rb",
-    "lib/bullet_journal/config.rb"
+    "lib/bullet_journal/config.rb",
+    "lib/bullet_journal/logger.rb"
   ]
   s.executables << 'bj'
   s.homepage    = 'https://robgough.net/bullet-journal'

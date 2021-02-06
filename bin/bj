@@ -3,7 +3,7 @@
 require 'bullet_journal'
 require 'pathname'
 
-journal = BulletJournal.new(ARGV)
+journal = BulletJournal.new(args: ARGV)
 
 # So, you're probably wondering...
 # `system` vs `exec`
@@ -18,7 +18,7 @@ journal = BulletJournal.new(ARGV)
 #exec "nvim #{file_name}"
 
 puts "Bullet journal file:"
-puts "#{journal.full_path}"
+puts "  #{journal.full_path}"
 
 # we can't open a file until it exists, so
 # let's make sure it does
