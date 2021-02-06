@@ -20,6 +20,7 @@ class BulletJournal::Day
   end
 
   def previous!(requested_day_name)
+    #todo fix i18n
     requested_day_name = "friday" if requested_day_name == "week"
     begin
       yesterday!
@@ -27,6 +28,7 @@ class BulletJournal::Day
   end
 
   def next!(requested_day_name)
+    #todo fix i18n
     requested_day_name = "monday" if requested_day_name == "week"
     begin
       tomorrow!

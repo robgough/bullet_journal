@@ -17,11 +17,17 @@ class BulletJournal
     @name ||= "JOURNAL"
   end
 
+  def weekdays
+    #todo i18n
+    %w[monday tuesday wednesday thursday friday saturday sunday]
+  end
+
   private
     def parse_args(args)
       return if args.empty?
 
-      case args.shift.downcase
+      first_arg = args.shift.downcase
+      case first_arg
         when "someday"
           @someday = true
         when "today"
@@ -33,6 +39,8 @@ class BulletJournal
           @day.previous!(args.shift.downcase)
         when "next"
           @day.next!(args.shift.downcase)
+        when *weekdays
+          @day.next!(first_arg)
       end
       parse_name(args)
     end

@@ -65,6 +65,7 @@ rake test
   - [x] last weekday
   - [x] next week
   - [x] last week
+  - [x] weekday (e.g. `bj monday`)
 - [ ] implement `bj n days ago` parsing
 - [x] launch directly into an editor
 - [x] Turn into a ruby gem with an executable

@@ -46,6 +46,7 @@ class TestBulletJournal < Minitest::Test
   def test_next_weekday
     query_check("JOURNAL_2021-01-05_Tuesday.md", "next tuesday")
     query_check("WORK_2021-01-05_Tuesday.md", "next tuesday work")
+    query_check("JOURNAL_2021-01-05_Tuesday.md", "tuesday")
   end
 
   def test_last_week
