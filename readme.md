@@ -55,7 +55,7 @@ rake test
 
 ## To Do
 
-- [ ] basic functionality
+- [x] basic functionality
   - [x] someday
   - [x] today
   - [x] yesterday
@@ -71,9 +71,9 @@ rake test
 - [x] launch directly into an editor
 - [x] Turn into a ruby gem with an executable
 - [ ] release the gem!
-- [ ] create a config file `~/.config/bullet_journal/config.yml` for storing
-  - [ ] central notes location
-  - [ ] journal-specific notes location
+- [ ] read from a config file `~/.config/bullet_journal/config.yml`
+  - [x] central notes location
+  - [x] journal-specific notes location
   - [ ] default journal name (original is "JOURNAL")
   - [ ] whitelist only acceptable journal names
   - [ ] editor of choice
