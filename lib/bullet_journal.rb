@@ -1,8 +1,8 @@
 class BulletJournal
   def initialize(args = [],
-                 journal_date = BulletJournal::Day.new)
+                 day = BulletJournal::Day.new)
 
-    @journal_date = journal_date
+    @day = day
     @someday = false
     parse_args(args)
   end
@@ -10,15 +10,11 @@ class BulletJournal
   def full_path
     return "#{name}_Someday.md" if @someday
 
-    "#{name}_#{date}.md"
+    "#{name}_#{@day}.md"
   end
 
   def name
     @name ||= "JOURNAL"
-  end
-
-  def date
-    @journal_date.date
   end
 
   private
@@ -31,14 +27,18 @@ class BulletJournal
           parse_name(args[1..])
         when "today"
           parse_name(args[1..])
+        when "yesterday"
+          @day.yesterday!
+          parse_name(args[1..])
+        when "tomorrow"
+          @day.tomorrow!
+          parse_name(args[1..])
         when "last"
 
+          parse_name(args[2..])
         when "next"
 
-        when "yesterday"
-
-        when "tomorrow"
-
+          parse_name(args[2..])
         else
           parse_name(args)
       end

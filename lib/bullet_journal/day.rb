@@ -3,7 +3,15 @@ class BulletJournal::Day
     @time = time
   end
 
-  def date
+  def to_s
     @time.strftime("%Y-%m-%d_%A")
+  end
+
+  def yesterday!
+    @time -= 86400
+  end
+
+  def tomorrow!
+    @time += 86400
   end
 end

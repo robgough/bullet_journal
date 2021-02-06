@@ -6,62 +6,55 @@ Minitest::Reporters.use!
 
 class TestBulletJournal < Minitest::Test
   def setup
-    @journal_date = BulletJournal::Day.new(Time.new(2021,01,01))
   end
 
-  def test_no_params_returns_journal_for_today
+  def query_check(expected, query)
+    journal_date = BulletJournal::Day.new(Time.new(2021,01,01))
     assert_equal(
-      "JOURNAL_2021-01-01_Friday.md",
-      BulletJournal.new([], @journal_date).full_path
+      expected,
+      BulletJournal.new(query.split, journal_date).full_path
     )
   end
 
-  def test_today_specified
-    assert_equal(
-      "JOURNAL_2021-01-01_Friday.md",
-      BulletJournal.new(["today"], @journal_date).full_path
-    )
+  def test_today
+    query_check("JOURNAL_2021-01-01_Friday.md", "")
+    query_check("JOURNAL_2021-01-01_Friday.md", "today")
+    query_check("BANANA_2021-01-01_Friday.md", "today banana")
   end
 
-  def test_today_specified_with_journal
-    assert_equal(
-      "BANANA_2021-01-01_Friday.md",
-      BulletJournal.new(%w[ today banana], @journal_date).full_path
-    )
+  def test_tomorrow
+    query_check("JOURNAL_2021-01-02_Saturday.md", "tomorrow")
+    query_check("BANANA_2021-01-02_Saturday.md", "tomorrow banana")
+    query_check("BANANA-HAMMOCK_2021-01-02_Saturday.md", "tomorrow banana hammock")
   end
 
-  def test_just_tomorrow_returns
-    assert_equal(
-      "JOURNAL_2021-01-02_Saturday.md",
-      BulletJournal.new(["tomorrow"], @journal_date).full_path
-    )
+  def test_yesterday
+    query_check("JOURNAL_2020-12-31_Thursday.md", "yesterday")
+    query_check("BANANA_2020-12-31_Thursday.md", "yesterday banana")
   end
 
-  def test_just_someday
-    assert_equal(
-      "JOURNAL_Someday.md",
-      BulletJournal.new(["someday"], @journal_date).full_path
-    )
+  def test_someday
+    query_check("JOURNAL_Someday.md", "someday")
+    query_check("CUSTOM_Someday.md", "someday custom")
   end
 
-  def test_someday_with_custom_name
-    assert_equal(
-      "CUSTOM_Someday.md",
-      BulletJournal.new(%w[someday custom], @journal_date).full_path
-    )
+  def test_last_weekday
+    query_check("JOURNAL_2020_12_29_Tuesday.md", "last tuesday")
+    query_check("WORK_2020_12_29_Tuesday.md", "last tuesday work")
   end
 
-  def test_reads_out_diary_name_after_multi_word_date
-    assert_equal(
-      "BANANA",
-      BulletJournal.new(["banana"], @journal_date).name
-    )
+  def test_next_weekday
+    query_check("JOURNAL_2021_01_05_Tuesday", "next tuesday")
+    query_check("WORK_2021_01_05_Tuesday", "next tuesday work")
   end
 
-  def test_custom_multiword_name_joins_with_hyphen
-    assert_equal(
-      "BANANA-HAMMOCK",
-      BulletJournal.new(%w[banana hammock], @journal_date).name
-    )
+  def test_last_week
+    query_check("JOURNAL_2020_12_28_Monday.md", "last week")
+    query_check("WORK_2020_12_28_Monday.md", "last week work")
+  end
+
+  def test_next_week
+    query_check("JOURNAL_2021_01_04_Monday.md", "next week")
+    query_check("WORK_2021_01_04_Monday.md", "next week work")
   end
 end

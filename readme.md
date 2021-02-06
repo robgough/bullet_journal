@@ -58,9 +58,14 @@ rake test
 - [ ] basic functionality
   - [x] someday
   - [x] today
-  - [ ] yesterday
-  - [ ] tomorrow
-  - [ ] specify non-default journal
+  - [x] yesterday
+  - [x] tomorrow
+  - [x] specify non-default journal
+  - [ ] next weekday
+  - [ ] last weekday
+  - [ ] next week
+  - [ ] last week
+- [ ] implement `bj n days ago` parsing
 - [x] launch directly into an editor
 - [x] Turn into a ruby gem with an executable
 - [ ] release the gem!
