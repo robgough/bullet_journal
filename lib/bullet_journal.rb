@@ -30,7 +30,9 @@ class BulletJournal
         when "tomorrow"
           @day.tomorrow!
         when "last"
+          @day.previous!(args.shift.downcase)
         when "next"
+          @day.next!(args.shift.downcase)
       end
       parse_name(args)
     end

@@ -22,7 +22,7 @@ After a `gem install bullet_journal` you should be able to call the bullet journ
     - `tomorrow`
     - `yesterday`
     - `last <weekday>` (where <weekday> is Monday, Tuesday, Wednesday...)
-    - `last week` the monday of the previous week
+    - `last week` the Friday of the previous week
     - `next <weekday>`
     - `next week` the following Monday
     - `someday` a special undated case
@@ -61,10 +61,10 @@ rake test
   - [x] yesterday
   - [x] tomorrow
   - [x] specify non-default journal
-  - [ ] next weekday
-  - [ ] last weekday
-  - [ ] next week
-  - [ ] last week
+  - [x] next weekday
+  - [x] last weekday
+  - [x] next week
+  - [x] last week
 - [ ] implement `bj n days ago` parsing
 - [x] launch directly into an editor
 - [x] Turn into a ruby gem with an executable

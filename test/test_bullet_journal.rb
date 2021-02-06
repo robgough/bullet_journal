@@ -39,22 +39,22 @@ class TestBulletJournal < Minitest::Test
   end
 
   def test_last_weekday
-    query_check("JOURNAL_2020_12_29_Tuesday.md", "last tuesday")
-    query_check("WORK_2020_12_29_Tuesday.md", "last tuesday work")
+    query_check("JOURNAL_2020-12-29_Tuesday.md", "last tuesday")
+    query_check("WORK_2020-12-29_Tuesday.md", "last tuesday work")
   end
 
   def test_next_weekday
-    query_check("JOURNAL_2021_01_05_Tuesday", "next tuesday")
-    query_check("WORK_2021_01_05_Tuesday", "next tuesday work")
+    query_check("JOURNAL_2021-01-05_Tuesday.md", "next tuesday")
+    query_check("WORK_2021-01-05_Tuesday.md", "next tuesday work")
   end
 
   def test_last_week
-    query_check("JOURNAL_2020_12_28_Monday.md", "last week")
-    query_check("WORK_2020_12_28_Monday.md", "last week work")
+    query_check("JOURNAL_2020-12-25_Friday.md", "last week")
+    query_check("WORK_2020-12-25_Friday.md", "last week work")
   end
 
   def test_next_week
-    query_check("JOURNAL_2021_01_04_Monday.md", "next week")
-    query_check("WORK_2021_01_04_Monday.md", "next week work")
+    query_check("JOURNAL_2021-01-04_Monday.md", "next week")
+    query_check("WORK_2021-01-04_Monday.md", "next week work")
   end
 end
