@@ -1,8 +1,8 @@
 Gem::Specification.new do |s|
   s.name        = 'bullet_journal'
-  s.version     = '0.0.0'
-  s.summary     = "Helper for bullet journaling"
-  s.description = "Helper for managing bullet journals via the terminal mostly created for the authors benefit"
+  s.version     = '0.0.1.alpha.1'
+  s.summary     = "Helper util for bullet journaling"
+  s.description = "Helper utility for managing bullet journal style markdown files via the terminal"
   s.authors     = ["Rob Gough"]
   s.email       = 'bullet_journal@robgough.net'
   s.files       = [

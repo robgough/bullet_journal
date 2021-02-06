@@ -8,7 +8,7 @@ class TestBulletJournal::Config < Minitest::Test
   end
 
   def test_can_read_default_journal_name
-    assert_equal("TEST", @config.default_journal_name)
+    assert_equal("JOURNAL", @config.default_journal_name)
   end
 
   def test_can_read_default_journal_dir
@@ -29,5 +29,11 @@ class TestBulletJournal::Config < Minitest::Test
   def test_gracefully_handle_a_missing_config_file
     config = BulletJournal::Config.new('./no-file.yml')
     assert_equal(".", config.journal_location)
+  end
+
+  def test_returns_default_editor
+    assert_equal("none", @config.editor("work"))
+    assert_equal("nvim", @config.editor("JOURNAL"))
+    assert_equal("nvim", @config.editor(""))
   end
 end

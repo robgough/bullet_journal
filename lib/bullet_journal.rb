@@ -20,7 +20,11 @@ class BulletJournal
   end
 
   def name
-    @name ||= "JOURNAL"
+    @name ||= @config.default_journal_name
+  end
+
+  def editor
+    @config.editor(name)
   end
 
   def weekdays

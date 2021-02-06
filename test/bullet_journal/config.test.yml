@@ -1,7 +1,9 @@
 default:
-  journal_name: "TEST"
+  journal_name: "JOURNAL"
   journal_location: "tmp/"
+  editor: "nvim"
 work:
   journal_name: "WORK"
   journal_location: "~/Documents/work-notes"
+  editor: "none"
 
