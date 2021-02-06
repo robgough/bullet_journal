@@ -16,12 +16,12 @@ class BulletJournal::Config
 
     begin
       @config_file = YAML.load_file(file)
+      @logger.info "Loaded config:\n  #{file}"
     rescue
       @config_file = {}
       @logger.error "Unable to load config file."
     end
 
-    @logger.info "Loaded config:\n  #{file}"
     @logger.info "Default journal name:\n  #{default_journal_name}"
     @logger.info "Default journal location:\n  #{journal_location}"
     @logger.info "Default editor:\n  #{editor}"
@@ -52,15 +52,16 @@ class BulletJournal::Config
     end
 
     def create_initial_config(file)
+      @logger.info "Writing default config file."
       pathname = Pathname(file)
       pathname.dirname.mkpath
-      pathname.write(%{
-default:
+      pathname.write(%{default:
   journal_name: "JOURNAL"
   journal_location: "."
   editor: "vim"
 })
+      @logger.info "Default config file written."
     rescue
-      @logger.error "Unable to write default config file"
+      @logger.error "Unable to write default config file."
     end
 end
