@@ -21,6 +21,7 @@ class TestBulletJournal < Minitest::Test
     query_check("tmp/JOURNAL_2021-01-01_Friday.md", "")
     query_check("tmp/JOURNAL_2021-01-01_Friday.md", "today")
     query_check("tmp/BANANA_2021-01-01_Friday.md", "today banana")
+    query_check("tmp/HELLO_2021-01-01_Friday.md", "hello")
   end
 
   def test_tomorrow

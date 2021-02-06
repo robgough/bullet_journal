@@ -47,6 +47,8 @@ class BulletJournal
           @day.next!(args.shift.downcase)
         when *weekdays
           @day.next!(first_arg)
+        else
+          args.unshift(first_arg)
       end
       parse_name(args)
     end
