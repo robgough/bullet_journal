@@ -19,29 +19,20 @@ class BulletJournal
 
   private
     def parse_args(args)
-      return if args[0].nil?
+      return if args.empty?
 
-      case args[0].downcase
+      case args.shift.downcase
         when "someday"
           @someday = true
-          parse_name(args[1..])
         when "today"
-          parse_name(args[1..])
         when "yesterday"
           @day.yesterday!
-          parse_name(args[1..])
         when "tomorrow"
           @day.tomorrow!
-          parse_name(args[1..])
         when "last"
-
-          parse_name(args[2..])
         when "next"
-
-          parse_name(args[2..])
-        else
-          parse_name(args)
       end
+      parse_name(args)
     end
 
     def parse_name(name_args)
