@@ -26,5 +26,5 @@ if (journal.editor == 'open')
   `touch #{journal.full_path}` unless Pathname.new(journal.full_path).exist?
 end
 
-system "#{journal.editor} #{journal.full_path}"
+system "#{journal.editor} #{journal.full_path}" unless journal.editor == "none"
 
