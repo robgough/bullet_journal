@@ -4,6 +4,4 @@ default:
 work:
   journal_name: "WORK"
   journal_location: "~/Documents/work-notes"
-no_location_specified:
-  journal_name: "NOLOCATIONSPECIFIED"
 
