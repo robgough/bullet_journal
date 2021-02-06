@@ -1,13 +1,19 @@
 class BulletJournal
   def initialize(args = [],
-                 day = BulletJournal::Day.new)
+                 day = BulletJournal::Day.new,
+                 config = BulletJournal::Config.new)
 
     @day = day
     @someday = false
+    @config = config
     parse_args(args)
   end
 
   def full_path
+    File.join(@config.journal_location(name), path)
+  end
+
+  def path
     return "#{name}_Someday.md" if @someday
 
     "#{name}_#{@day}.md"
