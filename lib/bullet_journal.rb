@@ -52,3 +52,4 @@ class BulletJournal
 end
 
 require 'bullet_journal/day.rb'
+require 'bullet_journal/config.rb'

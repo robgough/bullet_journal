@@ -71,7 +71,7 @@ rake test
 - [x] launch directly into an editor
 - [x] Turn into a ruby gem with an executable
 - [ ] release the gem!
-- [ ] create a config file `~/.bulletjournal.config` for storing
+- [ ] create a config file `~/.config/bullet_journal/config.yml` for storing
   - [ ] central notes location
   - [ ] journal-specific notes location
   - [ ] default journal name (original is "JOURNAL")

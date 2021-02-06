@@ -1,0 +1,9 @@
+default:
+  journal_name: "TEST"
+  journal_location: "tmp/"
+work:
+  journal_name: "WORK"
+  journal_location: "~/Documents/work-notes"
+no_location_specified:
+  journal_name: "NOLOCATIONSPECIFIED"
+
