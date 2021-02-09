@@ -11,7 +11,7 @@ Gem::Specification.new do |s|
     "lib/bullet_journal/config.rb",
     "lib/bullet_journal/logger.rb"
   ]
-  s.executables << 'bj'
+  s.executables << 'jo'
   s.homepage    = 'https://robgough.net/bullet-journal'
   s.metadata    = {
     "source_code_uri" => "https://github.com/robgough/bullet_journal",
