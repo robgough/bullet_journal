@@ -1,6 +1,6 @@
 # Bullet Journal
 
-**This is still a work in progress and sujoect to change.**
+**This is still a work in progress and subject to change.**
 
 A simple ruby gem that makes it easier to manage a bullet journal inspired personal notes system via a series of markdown files using a terminal executable called `jo`.
 
