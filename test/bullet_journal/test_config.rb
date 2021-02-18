@@ -45,7 +45,7 @@ class TestBulletJournal::Config < Minitest::Test
     tmp_config_file = "tmp/config.yml"
     pathname = Pathname.new(tmp_config_file)
     pathname.delete if pathname.exist?
-    config = BulletJournal::Config.new(
+    BulletJournal::Config.new(
       file: tmp_config_file,
       logger: BulletJournal::Logger.new(enabled: false))
 
