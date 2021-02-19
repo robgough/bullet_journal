@@ -1,6 +1,6 @@
 # Bullet Journal
 
-[![Gem Version](https://badge.fury.io/rb/bullet_journal.svg)](https://badge.fury.io/rb/bullet_journal)
+[![Gem Version](https://badge.fury.io/rb/bullet_journal.svg)](https://badge.fury.io/rb/bullet_journal) [![Ruby](https://github.com/robgough/bullet_journal/actions/workflows/ruby.yml/badge.svg)](https://github.com/robgough/bullet_journal/actions/workflows/ruby.yml)
 
 **This is still a work in progress and subject to change.**
 
