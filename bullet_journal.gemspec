@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name        = 'bullet_journal'
-  s.version     = '0.0.1.alpha.1'
+  s.version     = '0.0.1.alpha.2'
   s.summary     = "Helper util for bullet journaling"
   s.description = "Helper utility for managing bullet journal style markdown files via the terminal"
   s.authors     = ["Rob Gough"]
@@ -15,6 +15,6 @@ Gem::Specification.new do |s|
   s.homepage    = 'https://robgough.net/bullet-journal'
   s.metadata    = {
     "source_code_uri" => "https://github.com/robgough/bullet_journal",
-    "changelog_uri"   => "https://github.com/robgough/bullet_journal/changelog.md"
+    "changelog_uri"   => "https://github.com/robgough/bullet_journal/blob/main/changelog.md"
   }
 end
